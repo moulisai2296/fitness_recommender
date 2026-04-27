@@ -2,8 +2,41 @@
 
 Welcome to FitCoach AI! This is a full-stack, AI-powered personal fitness tracking web application. It allows you to set up a profile, log daily workouts and activities, and receive intelligent, personalized fitness recommendations powered by Google's Gemini AI.
 
-## 🚀 How to Use the App
+## ⚙️ Local Setup & Installation
 
+If you want to run this project on another system, you will need to set up the environment first.
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Python](https://www.python.org/) (v3.10+ recommended)
+- `uv` package manager (`pip install uv`)
+
+### 1. Backend Setup
+Navigate to the `backend` directory and set up the Python environment:
+```bash
+cd backend
+# Sync and install all dependencies using uv
+uv sync
+```
+*Note: The backend requires an `.env` file. A default SQLite database is configured out of the box, but you can update `APP_SECRET_KEY` in the `.env` file for production.*
+
+### 2. Frontend Setup
+Navigate to the `frontend` directory and install the React dependencies:
+```bash
+cd frontend
+npm install
+```
+
+### 3. Running the App
+Once everything is installed, you can start both servers simultaneously using the provided script (if you are on Windows):
+```powershell
+.\start_app.ps1
+```
+Alternatively, run them manually in separate terminal windows:
+- **Backend:** `cd backend` then `uv run uvicorn app.main:app --reload --port 8000`
+- **Frontend:** `cd frontend` then `npm run dev -- --port 5173`
+
+## 🚀 How to Use the App
 1. **Start the Application**: 
    Use the provided `start_app.ps1` script to easily start both the backend server and the frontend client simultaneously.
    ```powershell
