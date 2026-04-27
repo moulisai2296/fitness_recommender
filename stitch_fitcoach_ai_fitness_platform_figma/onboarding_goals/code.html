@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#222c24",
+                    "tertiary": "#fffaf7",
+                    "on-tertiary": "#3d2f00",
+                    "surface-container": "#182219",
+                    "on-background": "#dae6d8",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#29332a",
+                    "on-primary": "#003919",
+                    "surface-container-lowest": "#071009",
+                    "on-primary-fixed-variant": "#005227",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "on-tertiary-fixed-variant": "#584400",
+                    "surface-container-low": "#141e16",
+                    "secondary": "#a6e6ff",
+                    "on-error": "#690005",
+                    "secondary-container": "#14d1ff",
+                    "background": "#0c160e",
+                    "secondary-fixed": "#b7eaff",
+                    "surface-tint": "#00e476",
+                    "primary-fixed-dim": "#00e476",
+                    "on-secondary-fixed": "#001f28",
+                    "outline": "#849584",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#4cd6ff",
+                    "tertiary-fixed-dim": "#e5c364",
+                    "surface-container-highest": "#2d372e",
+                    "on-surface-variant": "#b9cbb9",
+                    "inverse-primary": "#006d35",
+                    "on-secondary-container": "#00566b",
+                    "surface-variant": "#2d372e",
+                    "on-primary-fixed": "#00210c",
+                    "primary-container": "#00ff85",
+                    "inverse-surface": "#dae6d8",
+                    "on-tertiary-container": "#795f01",
+                    "on-secondary": "#003543",
+                    "on-primary-container": "#007137",
+                    "surface-dim": "#0c160e",
+                    "tertiary-container": "#ffdb79",
+                    "outline-variant": "#3b4b3d",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-surface": "#dae6d8",
+                    "primary": "#f0ffee",
+                    "surface-bright": "#313c32",
+                    "tertiary-fixed": "#ffe08d",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#61ff97",
+                    "surface": "#0c160e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "xxl": "48px",
+                    "container-padding": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Lexend"],
+                    "display-xl": ["Lexend"],
+                    "headline-md": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-active {
+            box-shadow: 0px 4px 20px rgba(0, 255, 133, 0.15);
+        }
+        .bg-coach-gradient {
+            background: linear-gradient(135deg, #00FF85 0%, #00D1FF 100%);
+        }
+        .step-active {
+            background: #00FF85;
+            box-shadow: 0 0 10px rgba(0, 255, 133, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0F0F0F] text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top AppBar (Simplified for Onboarding Context as per Suppression Rule) -->
+<header class="fixed top-0 w-full flex justify-between items-center px-4 h-16 bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800 z-50">
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+</div>
+<div class="text-xl font-black text-[#00FF85] drop-shadow-[0_0_10px_rgba(0,255,133,0.3)] font-lexend">
+            FitCoach AI
+        </div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-1 flex flex-col px-4 pt-24 pb-32 max-w-lg mx-auto w-full">
+<!-- Progress Indicator -->
+<div class="flex flex-col gap-4 mb-xl">
+<div class="flex justify-between items-center mb-1">
+<span class="text-label-sm font-label-sm text-zinc-500 uppercase tracking-widest">Step 3 of 4</span>
+<span class="text-label-sm font-label-sm text-[#00FF85]">75% Complete</span>
+</div>
+<div class="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden flex gap-1">
+<div class="h-full w-1/4 bg-[#00FF85]"></div>
+<div class="h-full w-1/4 bg-[#00FF85]"></div>
+<div class="h-full w-1/4 bg-[#00FF85]"></div>
+<div class="h-full flex-1 bg-zinc-800"></div>
+</div>
+</div>
+<!-- Headline -->
+<div class="mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-white mb-sm">What is your primary fitness goal?</h1>
+<p class="font-body-md text-body-md text-zinc-400">This helps our AI tailor your workout intensity and nutritional focus.</p>
+</div>
+<!-- Goal Selection Cards -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Lose Weight -->
+<button class="relative flex items-center gap-md p-md rounded-xl border border-[#2A2D35] bg-[#1A1D23] hover:border-[#00FF85]/50 transition-all text-left group">
+<div class="w-12 h-12 rounded-lg bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-[#00FF85] transition-colors">
+<span class="material-symbols-outlined text-3xl">monitor_weight</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-[18px] text-white">Lose Weight</span>
+<span class="font-body-md text-sm text-zinc-500">Burn fat and improve metabolic health</span>
+</div>
+</button>
+<!-- Build Strength (SELECTED) -->
+<button class="relative flex items-center gap-md p-md rounded-xl border-2 border-[#00FF85] bg-[#1A1D23] glow-active text-left group">
+<div class="w-12 h-12 rounded-lg bg-[#00FF85]/10 flex items-center justify-center text-[#00FF85]">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-[18px] text-white">Build Strength</span>
+<span class="font-body-md text-sm text-[#00FF85]">Gain muscle mass and raw power</span>
+</div>
+<div class="absolute right-md">
+<span class="material-symbols-outlined text-[#00FF85]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<!-- Stay Active -->
+<button class="relative flex items-center gap-md p-md rounded-xl border border-[#2A2D35] bg-[#1A1D23] hover:border-[#00FF85]/50 transition-all text-left group">
+<div class="w-12 h-12 rounded-lg bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-[#00FF85] transition-colors">
+<span class="material-symbols-outlined text-3xl">directions_run</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-[18px] text-white">Stay Active</span>
+<span class="font-body-md text-sm text-zinc-500">Maintain current fitness and longevity</span>
+</div>
+</button>
+<!-- Improve Endurance -->
+<button class="relative flex items-center gap-md p-md rounded-xl border border-[#2A2D35] bg-[#1A1D23] hover:border-[#00FF85]/50 transition-all text-left group">
+<div class="w-12 h-12 rounded-lg bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-[#00FF85] transition-colors">
+<span class="material-symbols-outlined text-3xl">speed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-[18px] text-white">Improve Endurance</span>
+<span class="font-body-md text-sm text-zinc-500">Boost cardiovascular stamina</span>
+</div>
+</button>
+</div>
+<!-- AI Tip Card -->
+<div class="mt-xl p-md rounded-xl border border-[#00FF85]/30 bg-surface-container-low flex gap-md items-start relative overflow-hidden">
+<div class="absolute inset-0 bg-coach-gradient opacity-5"></div>
+<span class="material-symbols-outlined text-[#00FF85] z-10">smart_toy</span>
+<div class="z-10">
+<p class="font-label-sm text-[#00FF85] mb-xs uppercase">Coach Tip</p>
+<p class="font-body-md text-sm text-on-background">"Build Strength" protocols involve progressive overload. I'll prioritize compound movements in your plan.</p>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Action -->
+<div class="fixed bottom-0 left-0 w-full p-4 bg-[#0F0F0F]/80 backdrop-blur-md border-t border-zinc-800 z-50">
+<div class="max-w-lg mx-auto">
+<button class="w-full h-12 bg-[#00FF85] text-black font-lexend font-bold rounded-lg shadow-[0_4px_20px_rgba(0,255,133,0.2)] active:scale-95 transition-transform">
+                Continue
+            </button>
+</div>
+</div>
+</body></html>
