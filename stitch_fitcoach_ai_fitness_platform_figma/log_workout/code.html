@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#222c24",
+                    "tertiary": "#fffaf7",
+                    "on-tertiary": "#3d2f00",
+                    "surface-container": "#182219",
+                    "on-background": "#dae6d8",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#29332a",
+                    "on-primary": "#003919",
+                    "surface-container-lowest": "#071009",
+                    "on-primary-fixed-variant": "#005227",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "on-tertiary-fixed-variant": "#584400",
+                    "surface-container-low": "#141e16",
+                    "secondary": "#a6e6ff",
+                    "on-error": "#690005",
+                    "secondary-container": "#14d1ff",
+                    "background": "#0c160e",
+                    "secondary-fixed": "#b7eaff",
+                    "surface-tint": "#00e476",
+                    "primary-fixed-dim": "#00e476",
+                    "on-secondary-fixed": "#001f28",
+                    "outline": "#849584",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#4cd6ff",
+                    "tertiary-fixed-dim": "#e5c364",
+                    "surface-container-highest": "#2d372e",
+                    "on-surface-variant": "#b9cbb9",
+                    "inverse-primary": "#006d35",
+                    "on-secondary-container": "#00566b",
+                    "surface-variant": "#2d372e",
+                    "on-primary-fixed": "#00210c",
+                    "primary-container": "#00ff85",
+                    "inverse-surface": "#dae6d8",
+                    "on-tertiary-container": "#795f01",
+                    "on-secondary": "#003543",
+                    "on-primary-container": "#007137",
+                    "surface-dim": "#0c160e",
+                    "tertiary-container": "#ffdb79",
+                    "outline-variant": "#3b4b3d",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-surface": "#dae6d8",
+                    "primary": "#f0ffee",
+                    "surface-bright": "#313c32",
+                    "tertiary-fixed": "#ffe08d",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#61ff97",
+                    "surface": "#0c160e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "xxl": "48px",
+                    "container-padding": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Lexend"],
+                    "display-xl": ["Lexend"],
+                    "headline-md": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .activity-tile-active {
+            border-color: #00FF85;
+            background: rgba(0, 255, 133, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 133, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#0F0F0F] text-on-background font-body-md min-h-screen pb-32">
+<header class="fixed top-0 w-full flex justify-between items-center px-4 h-16 bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800 z-50">
+<div class="flex items-center gap-2">
+<span class="text-xl font-black text-[#00FF85] drop-shadow-[0_0_10px_rgba(0,255,133,0.3)] font-lexend tracking-tight">FitCoach AI</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-400 hover:text-[#00FF85] transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#00FF85]/30">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a determined male athlete with sweat on skin, dark cinematic lighting, high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyq-2ow5GXIHWtt5wAxkBbl2R8TulvECxdFb1tsuyEPAHvcxO2tpQGAC1FnMB160uc4vDTTwgnM7kCJDj7jFEwUDmIhpIvmzfkrO5fNRtQetfgKQfFSAuv9tlaIggc7T3fy1F9oIHp7VS245N_X8czL5K-GzAUye6VMWz3yFFB22uJqijZZeL_MrLF7wRlI-WNjYBl4HldMORssG25RsfDa1nBrwscBCca-CWvnVQfQkRehwffEv4lj8efx85O1HSk9lMNQ3GwceU"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-4 max-w-lg mx-auto">
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg text-on-background">Log Workout</h1>
+<p class="font-body-md text-zinc-500 mt-1">Track your progress toward perfection.</p>
+</div>
+<div class="bg-[#1A1D23] rounded-xl border border-[#2A2D35] p-6 mb-8">
+<section class="mb-8">
+<label class="font-label-sm text-label-sm text-zinc-400 block mb-4 uppercase tracking-widest">Select Activity</label>
+<div class="grid grid-cols-4 gap-3">
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] transition-all hover:border-[#00FF85]/50 group activity-tile-active">
+<span class="material-symbols-outlined text-[#00FF85] mb-2" data-icon="directions_run" style="font-variation-settings: 'FILL' 1;">directions_run</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-[#00FF85]">Running</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] transition-all hover:border-[#00FF85]/50 group">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-white mb-2" data-icon="directions_bike">directions_bike</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-zinc-500 group-hover:text-white">Cycling</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] transition-all hover:border-[#00FF85]/50 group">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-white mb-2" data-icon="self_improvement">self_improvement</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-zinc-500 group-hover:text-white">Yoga</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] transition-all hover:border-[#00FF85]/50 group">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-white mb-2" data-icon="fitness_center">fitness_center</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-zinc-500 group-hover:text-white">Weights</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] transition-all hover:border-[#00FF85]/50 group">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-white mb-2" data-icon="pool">pool</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-zinc-500 group-hover:text-white">Swim</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] transition-all hover:border-[#00FF85]/50 group">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-white mb-2" data-icon="hiking">hiking</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-zinc-500 group-hover:text-white">Hiking</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] transition-all hover:border-[#00FF85]/50 group">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-white mb-2" data-icon="sports_tennis">sports_tennis</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-zinc-500 group-hover:text-white">Tennis</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] transition-all hover:border-[#00FF85]/50 group">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-white mb-2" data-icon="more_horiz">more_horiz</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-zinc-500 group-hover:text-white">Other</span>
+</button>
+</div>
+</section>
+<section class="mb-8">
+<label class="font-label-sm text-label-sm text-zinc-400 block mb-4 uppercase tracking-widest">Duration (Minutes)</label>
+<div class="flex items-center justify-between bg-[#0F0F0F] border border-[#2A2D35] rounded-lg p-2">
+<button class="w-12 h-12 flex items-center justify-center bg-[#1A1D23] rounded-md text-[#00FF85] hover:bg-zinc-800 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="font-display-xl text-display-xl text-white">45</span>
+<button class="w-12 h-12 flex items-center justify-center bg-[#1A1D23] rounded-md text-[#00FF85] hover:bg-zinc-800 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</section>
+<section class="mb-8">
+<label class="font-label-sm text-label-sm text-zinc-400 block mb-4 uppercase tracking-widest">Intensity Level</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] text-zinc-500 font-bold uppercase text-[12px] flex items-center justify-center gap-2 hover:border-green-500/50 hover:text-green-500 transition-all">
+<span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"></span>
+                        Low
+                    </button>
+<button class="py-3 rounded-lg border border-[#00FF85] bg-surface-container-high text-[#00FF85] font-bold uppercase text-[12px] flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,133,0.15)]">
+<span class="w-2 h-2 rounded-full bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.5)]"></span>
+                        Medium
+                    </button>
+<button class="py-3 rounded-lg border border-[#2A2D35] bg-[#0F0F0F] text-zinc-500 font-bold uppercase text-[12px] flex items-center justify-center gap-2 hover:border-red-500/50 hover:text-red-500 transition-all">
+<span class="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
+                        High
+                    </button>
+</div>
+</section>
+<section class="mb-8">
+<label class="font-label-sm text-label-sm text-zinc-400 block mb-4 uppercase tracking-widest">How did it feel?</label>
+<textarea class="w-full bg-[#0F0F0F] border-none rounded-lg p-4 text-white placeholder-zinc-600 focus:ring-1 focus:ring-[#00FF85] focus:bg-[#1A1D23] transition-all" placeholder="Describe your performance, energy levels, or mood..." rows="3"></textarea>
+</section>
+<button class="w-full h-12 bg-primary-container text-on-primary-container font-lexend font-bold rounded-lg flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(0,255,133,0.25)] hover:opacity-90 active:scale-95 transition-all">
+                Complete Workout
+                <span class="material-symbols-outlined text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+</div>
+<div class="p-6 bg-surface-container rounded-xl border border-primary-container/20 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[#00FF85]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-bold text-[#00FF85] font-lexend">Coach AI Insight</span>
+</div>
+<p class="text-sm text-zinc-300">Based on your recent 45-min medium intensity runs, you're on track to shave 30 seconds off your 5K personal best by next week.</p>
+</div>
+</main>
+<footer class="w-full flex flex-col items-center gap-4 text-center px-6 py-12 border-t border-zinc-900 bg-[#0F0F0F] mt-12">
+<span class="font-bold text-[#00FF85] font-lexend">FitCoach AI</span>
+<p class="font-lexend text-sm text-zinc-500">© 2024 FitCoach AI. High-Performance Precision.</p>
+<div class="flex gap-4">
+<a class="text-zinc-500 hover:text-white transition-all text-xs" href="#">Privacy Policy</a>
+<a class="text-zinc-500 hover:text-white transition-all text-xs" href="#">Terms of Service</a>
+<a class="text-zinc-500 hover:text-white transition-all text-xs" href="#">Contact Support</a>
+</div>
+</footer>
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-2 pb-safe bg-zinc-900/90 backdrop-blur-md z-50 rounded-t-2xl border-t border-zinc-800 shadow-[0_-4px_20px_rgba(0,255,133,0.05)]">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00FF85]/80 transition-transform active:scale-90 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00FF85] relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-[#00FF85] after:rounded-full after:shadow-[0_0_8px_#00FF85] transition-transform active:scale-90 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-lexend text-[10px] font-medium">Log</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00FF85]/80 transition-transform active:scale-90 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-lexend text-[10px] font-medium">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00FF85]/80 transition-transform active:scale-90 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-lexend text-[10px] font-medium">AI Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00FF85]/80 transition-transform active:scale-90 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-lexend text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

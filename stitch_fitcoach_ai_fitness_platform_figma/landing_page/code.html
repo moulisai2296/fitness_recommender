@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCoach AI - Performance Precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow {
+            box-shadow: 0px 4px 20px rgba(0, 255, 133, 0.15);
+        }
+        .ai-border {
+            position: relative;
+            background: #1A1D23;
+            border-radius: 12px;
+        }
+        .ai-border::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: 13px;
+            padding: 1px;
+            background: linear-gradient(to right, #00FF85, #00D1FF);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#222c24",
+                      "tertiary": "#fffaf7",
+                      "on-tertiary": "#3d2f00",
+                      "surface-container": "#182219",
+                      "on-background": "#dae6d8",
+                      "error-container": "#93000a",
+                      "inverse-on-surface": "#29332a",
+                      "on-primary": "#003919",
+                      "surface-container-lowest": "#071009",
+                      "on-primary-fixed-variant": "#005227",
+                      "on-secondary-fixed-variant": "#004e60",
+                      "on-tertiary-fixed-variant": "#584400",
+                      "surface-container-low": "#141e16",
+                      "secondary": "#a6e6ff",
+                      "on-error": "#690005",
+                      "secondary-container": "#14d1ff",
+                      "background": "#0c160e",
+                      "secondary-fixed": "#b7eaff",
+                      "surface-tint": "#00e476",
+                      "primary-fixed-dim": "#00e476",
+                      "on-secondary-fixed": "#001f28",
+                      "outline": "#849584",
+                      "on-error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#4cd6ff",
+                      "tertiary-fixed-dim": "#e5c364",
+                      "surface-container-highest": "#2d372e",
+                      "on-surface-variant": "#b9cbb9",
+                      "inverse-primary": "#006d35",
+                      "on-secondary-container": "#00566b",
+                      "surface-variant": "#2d372e",
+                      "on-primary-fixed": "#00210c",
+                      "primary-container": "#00ff85",
+                      "inverse-surface": "#dae6d8",
+                      "on-tertiary-container": "#795f01",
+                      "on-secondary": "#003543",
+                      "on-primary-container": "#007137",
+                      "surface-dim": "#0c160e",
+                      "tertiary-container": "#ffdb79",
+                      "outline-variant": "#3b4b3d",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-surface": "#dae6d8",
+                      "primary": "#f0ffee",
+                      "surface-bright": "#313c32",
+                      "tertiary-fixed": "#ffe08d",
+                      "error": "#ffb4ab",
+                      "primary-fixed": "#61ff97",
+                      "surface": "#0c160e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "xxl": "48px",
+                      "container-padding": "16px"
+              },
+              "fontFamily": {
+                      "body-md": ["Manrope"],
+                      "label-sm": ["Manrope"],
+                      "body-lg": ["Manrope"],
+                      "headline-lg": ["Lexend"],
+                      "display-xl": ["Lexend"],
+                      "headline-md": ["Lexend"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "display-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 w-full flex justify-between items-center px-4 h-16 bg-zinc-950/80 backdrop-blur-xl z-50 border-b border-zinc-800">
+<div class="flex items-center gap-2">
+<span class="text-xl font-black text-[#00FF85] drop-shadow-[0_0_10px_rgba(0,255,133,0.3)] font-headline-md">FitCoach AI</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-zinc-400 hover:text-[#00FF85] transition-colors" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#00FF85]/30">
+<img alt="Profile" data-alt="close-up portrait of a determined male athlete with short hair and intense gaze in low key dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpAI0YJlJhDrMrmLssxPR-KM7_fdC0U1CONcuSBrEXE-GTCJplNWm-KQYU6BsfIrRQTj-YlasMoV-jQhXWkSGJzJI5Ig5iEbrFecNUkYN0Rx36g5CGUga5Iu5Nn4awgp6UYCvI3xtsDQXONR9hWdpYIhksWt-CplzTHe2xCpRco_n7F6GXl7LvOYML075DJEQtHHCJJj5TdmCaUgfzKTMHcsNScoYYthtjzSOvK8ZKlEuRWftBX8KJrnnWupJOmNndlY4Olwa9uZA"/>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-xxl">
+<section class="relative h-[795px] min-h-[600px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Background" class="w-full h-full object-cover opacity-40 grayscale" data-alt="moody wide shot of a high-end dark fitness training facility with neon green accents and heavy squat racks in shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXGchtJgFjo8RtoqCP3EhBqgP2eD0ws-8369mejI2nsyBcd9s0HSXuUu1hkQ0iCXEod5wqe1zyJ-zNMjS-Azr2tQeYDqUQIY75crB_cqBsLST6slDI5pO_ODekmdsySnH3p4vnZ538RcQoT-8Dtcyq33ITu3rtBPeYHsamH8gei2PCNkMfU6c2CLcHYJVh8LTOX9P0JQzzX3kvN_HaQIOPUOHkp5tNqbwA6_Ok9Stgi4XF0Lm1-mQV60AUNIzN7zi_ZJeCCZ-53CM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+</div>
+<div class="relative z-10 px-container-padding text-center max-w-4xl mx-auto">
+<h1 class="font-display-xl text-display-xl text-on-background mb-md leading-tight">
+                    Your AI-Powered Personal Coach — <span class="text-primary-container">Finally Honest About Fitness.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-zinc-400 mb-xl max-w-2xl mx-auto">
+                    Stop lying to yourself. Track every rep, optimize your goals, and get the brutal truth from AI guidance that actually understands human limits.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-md">
+<button class="w-full sm:w-auto h-12 px-xl bg-primary-container text-on-primary-container font-headline-md text-body-md rounded-lg neon-glow transition-transform active:scale-95">
+                        Get Started Free
+                    </button>
+<button class="w-full sm:w-auto h-12 px-xl border border-primary-container text-primary-container font-headline-md text-body-md rounded-lg hover:bg-primary-container/10 transition-all">
+                        See How It Works
+                    </button>
+</div>
+</div>
+</section>
+<section class="px-container-padding py-xl max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="md:col-span-2 bg-[#1A1D23] border border-[#2A2D35] p-lg rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-[#00FF85] mb-base" data-icon="insights">insights</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-base">Performance Intelligence</h3>
+<p class="text-zinc-400 font-body-md">Real-time breakdown of your physiological limits. No fluff, just pure data visualization that drives results.</p>
+<div class="mt-lg flex items-end gap-xs h-32">
+<div class="w-full bg-zinc-800 rounded-t-sm h-[40%] transition-all group-hover:h-[60%]"></div>
+<div class="w-full bg-zinc-800 rounded-t-sm h-[65%] transition-all group-hover:h-[85%]"></div>
+<div class="w-full bg-primary-container rounded-t-sm h-[90%] shadow-[0_0_15px_#00FF85]"></div>
+<div class="w-full bg-zinc-800 rounded-t-sm h-[55%] transition-all group-hover:h-[75%]"></div>
+<div class="w-full bg-zinc-800 rounded-t-sm h-[30%] transition-all group-hover:h-[50%]"></div>
+</div>
+</div>
+</div>
+<div class="ai-border p-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-base">
+<span class="material-symbols-outlined text-[#00D1FF]" data-icon="smart_toy">smart_toy</span>
+<span class="text-[#00D1FF] font-label-sm uppercase tracking-widest">AI Feedback</span>
+</div>
+<p class="text-on-background font-body-md leading-relaxed italic">
+                            "You're slacking on the eccentric phase. Control the weight, don't let it control you. Add 5lbs and try again."
+                        </p>
+</div>
+<div class="mt-lg">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-[#1A1D23]" data-alt="close-up of a diverse fitness enthusiast face in profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf6zdPAHAREMvyRk-fwwOP2kqj_sri7PpriGHCBBK8VfnhzF_MQSr4RivQZr-oAzq1lfo_MJhailoWB5CE7N-uTgFwrK91u5C2hnCYRXFcQruGI4wy8j5s2vAUW-pd-s2iL8ae-zj5JohNc9HRBNH6QIQ8ipBqpKIH_kp3NBiJnfcLQ8ETJLLR9OC8O8Z4_vabGvIEDBKqkva4oDWbEC9vwDzZgBNym0gqpUJmvpj0SplaRuJAS-3vaDYLBWEkWOEOY-Jj6NIPDwY"/>
+<img class="w-8 h-8 rounded-full border-2 border-[#1A1D23]" data-alt="close-up of a muscular person lifting weight in dark gym setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPjIvkUsG-JVGQ82kNhs2NtrEOhRumQvAhvtdnVdFdTiaZP6J-oK2Xs0ETEkIpRHSKbVyDnOjtgsYpwh_enrP5q1OdFoyDsMAipzGuP8-wn6dXcnCgRHqDvtfQ2H_1DWf_ubtWzmL-RD_I_5VuVT6nZCGTEWqkBfx97hJn2M7yE22f5P0fYg11j5hhQ0e2CjsYV14lBwHMbH_Sq1dEPXn8nt-3ulq1_8IkPyQKYEVs7vPulJY6gYBjYC5qzxmRTE8kP_40jNxLpfw"/>
+<div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-[10px] font-bold">+12k</div>
+</div>
+<p class="text-xs text-zinc-500 mt-2">Active coaches monitoring your form.</p>
+</div>
+</div>
+<div class="bg-[#1A1D23] border border-[#2A2D35] p-lg rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-[#00FF85] mb-base text-4xl" data-icon="add_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-base">Frictionless Logging</h3>
+<p class="text-zinc-400 font-body-md mb-md">Log a full session in under 30 seconds. Designed for the middle of a heavy set.</p>
+<div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-[#00FF85] to-[#00D1FF] w-3/4"></div>
+</div>
+</div>
+<div class="bg-[#1A1D23] border border-[#2A2D35] p-lg rounded-xl md:col-span-2 flex flex-col md:flex-row items-center gap-lg">
+<div class="w-full md:w-1/2">
+<img alt="Mobile UI Mockup" class="rounded-lg shadow-xl" data-alt="professional product shot of a high-end smartphone displaying a dark fitness app UI with green charts and circular progress rings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3BcQ7-0Ffg-gR3nxzZNFPwsckfV4CMMZCcIwm9zNzvPMd5ym5j8k_P5cY0COilRZOR4fcJmOC1bCG7TfGlDG_v9E16F9P96gsqz3Mlx6A-mYziKKpGXfBcuqurjrGnnmaoE2kgqSBrwDZh7MTJG6gmz9GpmHFQXFkFDzNtRSratSCpL4rpFEL_R_Fq8rpP5eofPMkV0F3f1aiDbDlcqYStjnoGGkJZdjfOB3nPIq9_a6W_mNxTEiT91egtPyWt64kUp2WcGGLWXI"/>
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="font-headline-md text-headline-md text-on-background mb-base">The Only App You'll Need</h3>
+<ul class="space-y-base">
+<li class="flex items-center gap-2 text-zinc-400 font-body-md">
+<span class="material-symbols-outlined text-[#00FF85] text-sm" data-icon="check_circle">check_circle</span> Adaptive Training Plans
+                            </li>
+<li class="flex items-center gap-2 text-zinc-400 font-body-md">
+<span class="material-symbols-outlined text-[#00FF85] text-sm" data-icon="check_circle">check_circle</span> Macro Precision Tracking
+                            </li>
+<li class="flex items-center gap-2 text-zinc-400 font-body-md">
+<span class="material-symbols-outlined text-[#00FF85] text-sm" data-icon="check_circle">check_circle</span> Recovery Forecasting
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="py-xxl bg-[#071009]/50">
+<div class="px-container-padding max-w-4xl mx-auto text-center">
+<h2 class="font-display-xl text-headline-lg text-on-background mb-lg">Ready to see your real potential?</h2>
+<div class="flex justify-center">
+<button class="h-12 px-xxl bg-primary-container text-on-primary-container font-headline-md text-body-md rounded-lg neon-glow transition-transform active:scale-95">
+                        Claim Your Coach Now
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full flex flex-col items-center gap-4 text-center px-6 py-12 bg-[#0F0F0F] border-t border-zinc-900">
+<div class="font-bold text-[#00FF85] font-headline-md">FitCoach AI</div>
+<nav class="flex gap-lg flex-wrap justify-center">
+<a class="text-zinc-500 hover:text-white transition-all duration-300 font-body-md text-sm" href="#">Privacy Policy</a>
+<a class="text-zinc-500 hover:text-white transition-all duration-300 font-body-md text-sm" href="#">Terms of Service</a>
+<a class="text-zinc-500 hover:text-white transition-all duration-300 font-body-md text-sm" href="#">Contact Support</a>
+</nav>
+<p class="font-lexend text-sm text-zinc-500 mt-4">© 2024 FitCoach AI. High-Performance Precision.</p>
+</footer>
+</body></html>

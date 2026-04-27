@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Progress - FitCoach AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#222c24",
+                    "tertiary": "#fffaf7",
+                    "on-tertiary": "#3d2f00",
+                    "surface-container": "#182219",
+                    "on-background": "#dae6d8",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#29332a",
+                    "on-primary": "#003919",
+                    "surface-container-lowest": "#071009",
+                    "on-primary-fixed-variant": "#005227",
+                    "on-secondary-fixed-variant": "#004e60",
+                    "on-tertiary-fixed-variant": "#584400",
+                    "surface-container-low": "#141e16",
+                    "secondary": "#a6e6ff",
+                    "on-error": "#690005",
+                    "secondary-container": "#14d1ff",
+                    "background": "#0c160e",
+                    "secondary-fixed": "#b7eaff",
+                    "surface-tint": "#00e476",
+                    "primary-fixed-dim": "#00e476",
+                    "on-secondary-fixed": "#001f28",
+                    "outline": "#849584",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#4cd6ff",
+                    "tertiary-fixed-dim": "#e5c364",
+                    "surface-container-highest": "#2d372e",
+                    "on-surface-variant": "#b9cbb9",
+                    "inverse-primary": "#006d35",
+                    "on-secondary-container": "#00566b",
+                    "surface-variant": "#2d372e",
+                    "on-primary-fixed": "#00210c",
+                    "primary-container": "#00ff85",
+                    "inverse-surface": "#dae6d8",
+                    "on-tertiary-container": "#795f01",
+                    "on-secondary": "#003543",
+                    "on-primary-container": "#007137",
+                    "surface-dim": "#0c160e",
+                    "tertiary-container": "#ffdb79",
+                    "outline-variant": "#3b4b3d",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-surface": "#dae6d8",
+                    "primary": "#f0ffee",
+                    "surface-bright": "#313c32",
+                    "tertiary-fixed": "#ffe08d",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#61ff97",
+                    "surface": "#0c160e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "xxl": "48px",
+                    "container-padding": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Lexend"],
+                    "display-xl": ["Lexend"],
+                    "headline-md": ["Lexend"],
+                    "lexend": ["Lexend"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-gradient-fill {
+            background: linear-gradient(180deg, rgba(0, 255, 133, 0.2) 0%, rgba(0, 255, 133, 0) 100%);
+        }
+        .progress-bar-gradient {
+            background: linear-gradient(90deg, #00FF85 0%, #00D1FF 100%);
+        }
+        body {
+            background-color: #0F0F0F;
+            color: #dae6d8;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-4 h-16 bg-zinc-950/80 backdrop-blur-xl z-50 border-b border-zinc-800">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-[#00FF85]">
+<img alt="Profile" data-alt="close-up of a fit young athlete's face with dramatic neon lighting and high contrast professional photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWxlQ_hkS73BPhqwAJLPMc6FnRP3zmYSuAeoxH7p-Vs-wPJ9MAEqT4Z_Mit9Rl3Bd7lFBJ2JogJ28KIrKHuSBNS7xspLFfEKfiRiyLBYThgfNYKCO6DdNSd_fhtS4nbqFrfqISFiuWuBhZd1XPZKVXnsq515jM-mXhUzfkhgDyfEFyXxVHxv9SZhSL750JBghoFg0a8PWc5Q_o5JVK43uzgcEnFKA5zhZ86mwerK8NtSUQi2TJ4oLfYb8vJmo-_3fCLVJSxhFYq6s"/>
+</div>
+<h1 class="text-xl font-black text-[#00FF85] drop-shadow-[0_0_10px_rgba(0,255,133,0.3)] font-lexend tracking-tight">FitCoach AI</h1>
+</div>
+<button class="p-2 text-[#00FF85] active:opacity-80 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-20 pb-28 px-4 max-w-md mx-auto">
+<!-- Date Range Selector -->
+<section class="mb-lg">
+<div class="flex justify-between items-center mb-base">
+<h2 class="font-headline-md text-on-surface">Analytics</h2>
+<div class="flex bg-surface-container-low p-1 rounded-lg border border-outline-variant">
+<button class="px-4 py-1.5 text-label-sm rounded-md bg-primary-container text-on-primary-container shadow-[0_0_15px_rgba(0,255,133,0.2)]">7D</button>
+<button class="px-4 py-1.5 text-label-sm rounded-md text-zinc-500 hover:text-white transition-colors">30D</button>
+<button class="px-4 py-1.5 text-label-sm rounded-md text-zinc-500 hover:text-white transition-colors">90D</button>
+</div>
+</div>
+</section>
+<!-- Charts Section -->
+<div class="space-y-lg">
+<!-- Sessions Chart -->
+<section class="bg-[#1A1D23] border border-[#2A2D35] rounded-xl p-md">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<p class="text-label-sm text-zinc-500 uppercase tracking-wider">Weekly Sessions</p>
+<h3 class="font-headline-md text-[#00FF85]">12 <span class="text-body-md text-zinc-400 font-normal">Completed</span></h3>
+</div>
+<div class="flex items-center text-primary-container text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+                        +15%
+                    </div>
+</div>
+<!-- Visual Bar Chart -->
+<div class="flex items-end justify-between h-32 gap-2">
+<div class="w-full bg-zinc-800 rounded-t-sm h-[40%] hover:bg-[#00FF85] transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">1</div>
+</div>
+<div class="w-full bg-zinc-800 rounded-t-sm h-[70%] hover:bg-[#00FF85] transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">2</div>
+</div>
+<div class="w-full bg-primary-container rounded-t-sm h-[90%] shadow-[0_0_10px_rgba(0,255,133,0.3)] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">3</div>
+</div>
+<div class="w-full bg-zinc-800 rounded-t-sm h-[30%] hover:bg-[#00FF85] transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">1</div>
+</div>
+<div class="w-full bg-zinc-800 rounded-t-sm h-[60%] hover:bg-[#00FF85] transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">2</div>
+</div>
+<div class="w-full bg-primary-container rounded-t-sm h-[80%] shadow-[0_0_10px_rgba(0,255,133,0.3)] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">3</div>
+</div>
+<div class="w-full bg-zinc-800 rounded-t-sm h-[20%] hover:bg-[#00FF85] transition-colors relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">0</div>
+</div>
+</div>
+<div class="flex justify-between mt-sm text-[10px] text-zinc-500 font-medium">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</section>
+<!-- Minutes Chart -->
+<section class="bg-[#1A1D23] border border-[#2A2D35] rounded-xl p-md">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<p class="text-label-sm text-zinc-500 uppercase tracking-wider">Weekly Minutes</p>
+<h3 class="font-headline-md text-secondary">420 <span class="text-body-md text-zinc-400 font-normal">Active mins</span></h3>
+</div>
+<div class="text-secondary text-label-sm">Avg: 60m/day</div>
+</div>
+<!-- Visual Line Chart -->
+<div class="relative h-32 w-full flex items-end">
+<svg class="w-full h-full preserve-3d" preserveaspectratio="none" viewbox="0 0 100 40">
+<defs>
+<lineargradient id="line-grad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00D1FF" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#00D1FF" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,35 Q15,30 25,15 T45,10 T65,25 T85,5 T100,20 L100,40 L0,40 Z" fill="url(#line-grad)"></path>
+<path d="M0,35 Q15,30 25,15 T45,10 T65,25 T85,5 T100,20" fill="none" stroke="#00D1FF" stroke-width="1.5"></path>
+<!-- Data Points -->
+<circle cx="25" cy="15" fill="#00D1FF" r="1.5"></circle>
+<circle cx="45" cy="10" fill="#00D1FF" r="1.5"></circle>
+<circle cx="85" cy="5" fill="#00D1FF" r="1.5"></circle>
+</svg>
+</div>
+<div class="flex justify-between mt-sm text-[10px] text-zinc-500 font-medium">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</section>
+</div>
+<!-- Workout History -->
+<section class="mt-xl">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-on-surface">Workout History</h2>
+<button class="p-2 bg-surface-container-low rounded-full border border-outline-variant hover:border-[#00FF85] transition-colors">
+<span class="material-symbols-outlined text-body-md" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<!-- Empty State Illustration Placeholder (Hidden if there's data) -->
+<div class="hidden flex-col items-center justify-center py-xl text-center">
+<div class="w-32 h-32 mb-lg bg-surface-container rounded-full flex items-center justify-center border-2 border-dashed border-zinc-800">
+<span class="material-symbols-outlined text-4xl text-zinc-700" data-icon="history">history</span>
+</div>
+<p class="text-body-md text-zinc-500">No workouts recorded this week.</p>
+<button class="mt-md text-[#00FF85] font-bold text-label-sm">START TRACKING</button>
+</div>
+<!-- Table-like List -->
+<div class="space-y-base">
+<!-- Record 1 -->
+<div class="flex items-center p-md bg-[#1A1D23] border border-[#2A2D35] rounded-xl hover:border-[#00FF85]/30 transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-[#00FF85] mr-md">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-on-surface">Strength Upper Body</h4>
+<p class="text-label-sm text-zinc-500">Yesterday, 18:30 • 45m</p>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-tight bg-primary-container/10 text-[#00FF85] border border-primary-container/20">High</span>
+</div>
+</div>
+<!-- Record 2 -->
+<div class="flex items-center p-md bg-[#1A1D23] border border-[#2A2D35] rounded-xl hover:border-[#00FF85]/30 transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mr-md">
+<span class="material-symbols-outlined" data-icon="directions_run">directions_run</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-on-surface">Endurance Run</h4>
+<p class="text-label-sm text-zinc-500">Mar 22 • 52m</p>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-tight bg-secondary-container/10 text-secondary border border-secondary-container/20">Mid</span>
+</div>
+</div>
+<!-- Record 3 -->
+<div class="flex items-center p-md bg-[#1A1D23] border border-[#2A2D35] rounded-xl hover:border-[#00FF85]/30 transition-all cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary-fixed-dim mr-md">
+<span class="material-symbols-outlined" data-icon="self_improvement">self_improvement</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-on-surface">Dynamic Yoga</h4>
+<p class="text-label-sm text-zinc-500">Mar 20 • 30m</p>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-tight bg-tertiary-container/10 text-tertiary-fixed-dim border border-tertiary-container/20">Low</span>
+</div>
+</div>
+</div>
+<button class="w-full py-md mt-lg text-[#00FF85] font-lexend font-bold text-label-sm border border-[#00FF85]/20 rounded-lg hover:bg-[#00FF85]/5 transition-colors">
+                VIEW FULL HISTORY
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center gap-4 text-center px-6 full-width py-12 bg-[#0F0F0F] border-t border-zinc-900">
+<span class="font-bold text-[#00FF85] font-lexend">FitCoach AI</span>
+<p class="font-lexend text-sm text-zinc-500">© 2024 FitCoach AI. High-Performance Precision.</p>
+<div class="flex gap-4">
+<a class="text-zinc-500 hover:text-white transition-all duration-300 font-lexend text-sm" href="#">Privacy Policy</a>
+<a class="text-zinc-500 hover:text-white transition-all duration-300 font-lexend text-sm" href="#">Terms of Service</a>
+</div>
+</footer>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-zinc-900/90 backdrop-blur-md flex justify-around items-center px-2 pb-safe z-50 rounded-t-2xl border-t border-zinc-800 shadow-[0_-4px_20px_rgba(0,255,133,0.05)]">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00FF85]/80 tap-highlight-transparent transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00FF85]/80 tap-highlight-transparent transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-lexend text-[10px] font-medium">Log</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00FF85] relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-[#00FF85] after:rounded-full after:shadow-[0_0_8px_#00FF85] tap-highlight-transparent transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="insights" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-lexend text-[10px] font-medium">Progress</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00FF85]/80 tap-highlight-transparent transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-lexend text-[10px] font-medium">AI Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-[#00FF85]/80 tap-highlight-transparent transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-lexend text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>
