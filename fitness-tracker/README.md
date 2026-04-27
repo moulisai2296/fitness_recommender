@@ -11,6 +11,7 @@ If you want to run this project on another system, you will need to set up the e
 - [Python](https://www.python.org/) (v3.10+ recommended)
 - `uv` package manager (`pip install uv`)
 
+
 ### 1. Backend Setup
 Navigate to the `backend` directory and set up the Python environment:
 ```bash
